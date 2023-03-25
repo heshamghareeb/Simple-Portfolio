@@ -1,0 +1,56 @@
+<section class="page-section" id="contact">
+  <div class="container">
+      <!-- Contact Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Form-->
+      <div class="row">
+          <div class="col-lg-8 mx-auto">
+              <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+              <form (submit)="onSubmit()" id="contactForm" name="sentMessage" novalidate="novalidate">
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label [style.color]="nameLabel==true?'#1abc9c':'#212529'">Name</label>
+                          <input (focus)="onFocusName()" (blur)="onBlurName($event)" class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+                          <p *ngIf="nameLabelValue" class="help-block text-danger">Please enter your name.</p>
+                          <!-- <div  *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors" class="alert alert-danger py-2">
+                            <p class="m-0" *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+                            <p class="m-0" *ngIf="loginForm.get('email')?.getError('email')">Email format invalid</p>
+                          </div> -->
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label [style.color]="emailLabel==true?'#1abc9c':'#212529'">Email Address</label>
+                          <input (focus)="onFocusEmail()" (blur)="onBlurEmail($event)" class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+                          <p *ngIf="emailLabelValue" class="help-block text-danger">Please enter your email address.</p>
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label [style.color]="phoneLabel==true?'#1abc9c':'#212529'">Phone Number</label>
+                          <input (focus)="onFocusPhone()" (blur)="onBlurPhone($event)" class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
+                          <p *ngIf="phoneLabelValue" class="help-block text-danger">Please enter your phone number.</p>
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label [style.color]="messageLabel==true?'#1abc9c':'#212529'">Message</label>
+                          <textarea (focus)="onFocusMessage()" (blur)="onBlurMessage($event)" class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                          <p *ngIf="messageLabelValue" class="help-block text-danger">Please enter a message.</p>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
